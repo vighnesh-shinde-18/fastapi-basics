@@ -15,6 +15,11 @@ FastAPI is Python Framework for Backend which receiver HTTP request and call pyt
   cd ai-backend-journey
   ```
 
+- Install FastApi & Dependacies 
+  ```bash 
+  pip install fastapi uvicorn pydantic python-dotenv httpx requests
+  ```
+
 - Create virtual environment for Windows
   ```bash
   python -m venv venv
@@ -100,7 +105,7 @@ app/
 │      user_repository.py
 │
 └── utils/
-.env
+example.env
 
 ```
 
