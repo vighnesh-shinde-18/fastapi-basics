@@ -1,6 +1,6 @@
 # FastAPI - Python Framework for AI
 
-FastAPI is Python Framework for Backend which receiver HTTP request and call python funtions then return response
+FastAPI is Python Framework for Backend which receive HTTP request and call python funtion then return response
 
 ## Features
 - Modern
@@ -15,19 +15,19 @@ FastAPI is Python Framework for Backend which receiver HTTP request and call pyt
   cd ai-backend-journey
   ```
 
-- Install FastApi & Dependacies 
+- Install FastApi & Dependencies 
   ```bash 
   pip install fastapi uvicorn pydantic python-dotenv httpx requests
   ```
 
-- Create virtual environment for Windows
+- Create a virtual environment for Windows
   ```bash
   python -m venv venv
   ```
 
 - Activate virtual environment
   ```bash 
-  venv\Scripts\activate
+  `venv\Scripts\activate`
   ```
 
 - Install packages
@@ -50,12 +50,12 @@ FastAPI is Python Framework for Backend which receiver HTTP request and call pyt
   uvicorn app.main:app --reload
   ```
 
-### API end Point - http://127.0.0.1:8000
+### API Endpoint - http://127.0.0.1:8000
 ### Swagger UI - http://127.0.0.1:8000/docs
 
 ## Pydantic 
-- It Use for Validation for data which send through request and response
-- Syntex : 
+- It is used for Validation for data that is sent through request and response
+- Syntax : 
     ```bash
     from pydantic import BaseModel, Field
     class schema(BaseModel):
@@ -144,7 +144,7 @@ async def create_user(user_data: CreateUser, db: Session = Depends(get_db)):
   5. Cleanup: Once the response is sent back to the user, FastAPI executes the finally block to automatically close the database connection, preventing memory leaks.
 
 ## Environment Variable
-- Instead Of hardcoding sensitive values directly in code we store them in env file 
+- Instead of hardcoding sensitive values directly in code we store them in env file 
   ```bash
   pip install python-dotenv
   ```
@@ -183,4 +183,4 @@ async def create_user(user_data: CreateUser, db: Session = Depends(get_db)):
 ### Repository Layer
 - Repository Layer Interact with Database which return SQLAlchemy Model
 - SQLAlchemy Model later convert to Response Model and return as JSON
-
+ 
