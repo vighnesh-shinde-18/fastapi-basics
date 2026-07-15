@@ -181,6 +181,9 @@ async def create_user(user_data: CreateUser, db: Session = Depends(get_db)):
 - Service Layer use repository layer to perform db opeartion
 
 ### Repository Layer
-- Repository Layer Interact with Database which return SQLAlchemy Model
-- SQLAlchemy Model later convert to Response Model and return as JSON
- 
+- Interacts directly with SQLAlchemy to convert Python object code into optimized SQL queries.
+- Executes database operations and returns standard SQLAlchemy Models as the initial response.
+
+### DataBase Layer
+- Manages the connection pool and configuration details for the database engine.
+- Handles the actual execution of SQL statements sent by the Repository Layer.
