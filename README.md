@@ -53,35 +53,6 @@ FastAPI is Python Framework for Backend which receive HTTP request and call pyth
 ### API Endpoint - http://127.0.0.1:8000
 ### Swagger UI - http://127.0.0.1:8000/docs
 
-## Pydantic 
-- It is used for Validation for data that is sent through request and response
-- Syntax : 
-    ```bash
-    from pydantic import BaseModel, Field
-    class schema(BaseModel):
-    language: str
-    code: str = Field(..., min_length=10)
-    max_tokens: int = 500
-    ``` 
-- Then we use them like this :-
-  ```bash
-  from app.schemas import CodeSubmission
-  @app.post("/",response_model=CodeSubmission)
-  async def submit(code:CodeSubmission)
-  ```
-
-## Router
-- Syntax:
-  creating router
-  ```bash
-  router = APIRouter(prefix="/users", tags=["Users"])
-  ```
-  importing and using router
-  ```bash
-  from app.routers.users import router as users_router
-  app.include_router(users_router)
-  ```
-
 ## Project Architecture 
 ```bash
 ├──app/
@@ -118,6 +89,36 @@ FastAPI is Python Framework for Backend which receive HTTP request and call pyth
 │
 └──  .gitignore 
 ```
+
+## Pydantic 
+- It is used for Validation for data that is sent through request and response
+- Syntax : 
+    ```bash
+    from pydantic import BaseModel, Field
+    class schema(BaseModel):
+    language: str
+    code: str = Field(..., min_length=10)
+    max_tokens: int = 500
+    ``` 
+- Then we use them like this :-
+  ```bash
+  from app.schemas import CodeSubmission
+  @app.post("/",response_model=CodeSubmission)
+  async def submit(code:CodeSubmission)
+  ```
+
+## Router
+- Syntax:
+  creating router
+  ```bash
+  router = APIRouter(prefix="/users", tags=["Users"])
+  ```
+  importing and using router
+  ```bash
+  from app.routers.users import router as users_router
+  app.include_router(users_router)
+  ```
+
 
 ## Dependncy Injection
 - FastAPI uses a powerful Dependency Injection (DI) system. Instead of your API endpoints manually creating the services or database connections they need, FastAPI automatically instantiates and provides ("injects") them at runtime using Depends()
